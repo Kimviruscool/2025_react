@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <span>Total clicks : 0</span> //span html에 문장출력
+
+    <body> //body html의 몸부분
+        <button id="btn"> Click me</button> //버튼생성 //버튼을 btn으로 정의
+    </body> //body end
+
+    <script> //기능을 하는 부분을 생성 //scriptstart
+            let counter = 0; //counter 숫자형 변수 생성
+        const button = document.getElementById("btn"); // 버튼 클릭된 횟수를 button 변수를 생성하여 저장
+        const span = document.querySelector("span"); // span 변수 생성하여 값을 가져옴
+        function handleClick(){ //function 클릭 기능 구현
+            counter = counter + 1; //카운터 를 1씩추가
+            span.innerText = `Total clicks : ${counter}`; //span 구역의 텍스트를 추가 `total click : ${클릭수만큼}`
+        }
+        button.addEventListener("click", handleClick); // 클릭을 누르면 클릭기능 활성화되는 이벤트추가
+    </script> //script end
+
+</html>
