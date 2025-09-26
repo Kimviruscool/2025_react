@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<span>Total clicks : 0</span> <!-- span html에 문장출력 -->
+
+<body> <!--body html의 몸부분-->
+<button id="btn"> Click me</button> <!--버튼생성 / 버튼을 btn으로 정의-->
+</body> <!--body end-->
+
+<!--script start-->
+<script>
+            let counter = 0;
+        const button = document.getElementById("btn");
+        const span = document.querySelector("span");
+        function handleClick(){
+            counter = counter + 1;
+            span.innerText = `Total clicks : ${counter}`;
+        }
+        button.addEventListener("click", handleClick);
+</script> <!--script end-->
+<!--
+<script> 스크립트 생성
+            let counter = 0; 카운터 변수 기본값 0 으로 할당하여 생성
+        const button = document.getElementById("btn"); 버튼을 누른횟수를 가져오는 변수 생성
+        const span = document.querySelector("span"); span 태그를 호출
+        function handleClick(){ 클릭횟수 증가 기능생성
+            counter = counter + 1; 변수 카운터를 호출하여 1씩 증가
+            span.innerText = `Total clicks : ${counter}`; span 태그에 클릭수 증가하여 text변환
+        }
+        button.addEventListener("click", handleClick); 버튼클릭시 click 안내와 handleclick 기능 활성화
+</script>
+-->
+
+</html>
