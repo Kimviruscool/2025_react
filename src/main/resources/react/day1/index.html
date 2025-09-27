@@ -1,9 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <body> </body>
+    <body>
+        <div id="root"> </div>
+    </body>
     <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"> </script>
+    <!--react import-->
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"> </script>
-    <script> </script>
+    <!--react import-->
+    <script>
+        const root = document.getElementById("root");
+        const h3 = React.createElement("h3",{
+            onMouseEnter: () => console.log("Mouse Enter")
+        },"Hello I'm a span");
+        const btn = React.createElement(
+            "button",
+            {
+                onClick: () => console.log("Im clicked"),
+            },
+            "Click me"
+        );
+        const container = React.createElement("div", null, [h3, btn]);
+        ReactDOM.render(container, root)
+    </script>
+    <!--
+    <script>
+        const root = document.getElementById("root");
+        root 라는 이름의 상수에 저장
+        documentElementByID("root")= HTML요소중ID가 root인것을
+        const span = React.createElement("span");
+        span 라는 이름의 상수에 저장
+        React.createElement("span") = 리엑트를 사용하여 요소를 만들겠다 span이라는 태그의
+        ReactDOM.render(span, root)
+        리엑트를 렌더하겠다(사용해그리겠다) span태그를 root 아이디가 있는곳에
+
+        {id:"sexy-span", style: {color : "red"} }
+
+    </script>
+    -->
+
 
 <!--  리엑트를 웹에서 사용할수있게 설치 dom과 같이설치 필수 -->
 
