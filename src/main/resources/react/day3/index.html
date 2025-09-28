@@ -11,32 +11,24 @@
     <!--babel import-->
     <script type="text/babel">
         const root = document.getElementById("root");
+        let counter = 0;
+        function countUp() {
+            counter = counter + 1;
+            render();
+        }
 
-        const Title = () => (
-            <h3 id="title" onMouseEnter={() => console.log("Mouse Enter")}>
-                Hello I'm a title
-            </h3>
-        );
+        function render() {
+            ReactDOM.render(<App />, root);
+        }
 
-        const Button = () => (
-            <button
-                style={{
-                    backgroundColor : "tomato",
-                }}
-                onClick={() => console.log("Im clicked")}
-            >
-                Click Me
-            </button>
-        );
-
-        const Container = () => (
+        const App = () => (
             <div>
-                <Title />
-                <Button />
+                <h3>Total clicks : {counter}</h3>
+                <button onClick={countUp}> Click Me </button>
             </div>
         );
 
-        ReactDOM.render(<Container />, root);
+        render();
 
     </script>
     <!--Babel : jsx 언어를 모르는 브라우저를 위해 변화를 한번 해줘야한다 -->

@@ -1,0 +1,22 @@
+state : 기본적으로 데이터가 저장되는 곳
+
+함수 , 기능 적용후 다시 render 필수 그렇지 않으면 출력되지 않음 필수 vanilla
+
+컴포넌트나 , JSX변수를 추가하고싶으면 {function}
+사용자에게 무언가 변화된 화면을 보여주고싶으면 render 다시 call
+onClick = {function} 해줌으로써 온클릭이벤트 발생
+
+Part one
+let counter = 0
+function countUp() {
+    counter + 1;
+}
+
+대신
+
+const data = React.useState();
+console.log(data);
+결과 (2)[0,f] : 상태 리스트안에 2개 아이템 존재 0은 카운트 숫자 f는 function의 기능으로 const data = React.useState(); 한줄로 카운트 업의 기능을 대신함.
+
+const [counter, modifier]] = React.useState(0);
+[1, 2] = [0 , f] 값을 넣어서 사용가능
