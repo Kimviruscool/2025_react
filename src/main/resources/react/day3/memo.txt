@@ -20,3 +20,7 @@ console.log(data);
 
 const [counter, modifier]] = React.useState(0);
 [1, 2] = [0 , f] 값을 넣어서 사용가능
+
+React.js 가 해주는 것?
+코드를 계속해서 다시 실행하여 바꾸는 것이아니라 데이터가 바뀔때마다 컴포넌트를 리렌더링하고 UI를 새로고침해줌(해당하는 숫자만 새로 생성)
+
