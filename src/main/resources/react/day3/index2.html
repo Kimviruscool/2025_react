@@ -15,8 +15,9 @@
         function App () {
         const [counter, setCounter] = React.useState(0);
         const onClick = () => {
-            setCounter(counter + 1);
-        }
+            //setCounter(counter + 1);
+            setCounter((current) => current +1 );
+        };
         return (
             <div>
                 <h3>Total clicks : {counter}</h3>
@@ -33,4 +34,7 @@
     <!--컴포넌트의 첫글자는 반드시 대문자여야 한다.-->
     <!-- <img> : html태그 , <Title> : 컴포넌트 -->
     <!-- 컴포넌트 : 직접만든 function , 기능 -->
+
+<!--current 현재의 값 -->
+<!--현재 state의 값을 가지고 계산하고싶다면 current 사용 , 직접 숫자,문자열 입력해주기 -->
 </html>

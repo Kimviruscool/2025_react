@@ -1,0 +1,50 @@
+<!--Input and State / 입력 그리고 상태-->
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"> </div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"> </script>
+    <!--react import-->
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"> </script>
+    <!--react import-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"> </script>
+    <!--babel import-->
+    <script type="text/babel">
+
+        function App () {
+        const [minutes, setMinutes] = React.useState()
+        const onChange = () => {
+          setMinutes(event.target.value);
+        };
+        return (
+            <div>
+                <h1>Super Converter </h1>
+                <label for="minutes"> Minutes </label>
+                <input value={minutes} id="minutes" placeholder="Minutes" type="number" onChange={onChange}/>
+                <h4>You want to convert {minutes}</h4>
+                <label for="hours"> Hours </label>
+                <input id="hours" placeholder="Hours" type="number" />
+            </div>
+            );
+        }
+
+
+        const root = document.getElementById("root");
+        ReactDOM.render(<App />, root);
+
+    </script>
+</html>
+
+<!-- label tag = 바로 옆에 있는 input 을 클릭해주는 태그 -->
+<!-- id , for 을 사용하여 지정된 id가 있는 곳을 for 로 선택 -->
+<!--for js언어 -->
+<!-- JSX 에서는 id , for 이 가능 class지정 불가능 -->
+<!-- HTML 에서는 className, htmlfor 가능-->
+<!--react input = uncontrolled-->
+
+<!--useSate 는 array를 제공, 그리고 첫번째 값이 element/요소 가 현재의 값이 됨-->
+<!--react는 가짜 이벤트를 발생시켜서 보여주고 console.log(even) 해주면 native Javascript event를 보여줌-->
+<!--console.log(event.target) 해주면 해당 공간에서만 일어나느 이벤트만 출력 .placeholder , value 등을 추가해줌으로써 원하는 값만 가져옴-->
+<!---->
