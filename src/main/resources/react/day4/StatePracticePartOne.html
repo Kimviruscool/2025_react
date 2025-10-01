@@ -1,0 +1,70 @@
+<!--StatePractice / 입력 그리고 상태-->
+
+<!DOCTYPE html>
+<html>
+<body>
+<div id="root"> </div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"> </script>
+<!--react import-->
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"> </script>
+<!--react import-->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"> </script>
+<!--babel import-->
+<script type="text/babel">
+
+    function App () {
+    const [amount, setAmount] = React.useState()
+    const [flipped, setFlipped] = React.useState(false);
+    const onChange = (event) => {
+      setAmount(event.target.value);
+    };
+    const reset = () => setAmount(0);
+    const flip = () => {
+        reset();
+        setFlipped(current => !current);
+    };
+    return (
+        <div>
+            <h1>Super Converter </h1>
+            <div>
+            <label htmlFor="minutes"> Minutes </label>
+            <input
+                value={flipped ? amount*60 : amount}
+                id="minutes"
+                placeholder="Minutes"
+                type="number"
+                onChange={onChange}
+                disabled={flipped}
+            />
+            </div>
+
+            <h4>You want to convert {amount}</h4>
+            <div>
+            <label htmlFor="hours"> Hours </label>
+            <input
+                value={flipped ? amount : Math.round(amount/60)}
+                id="hours"
+                placeholder="Hours"
+                type="number"
+                disabled={!flipped}
+                onChange={onChange}
+            />
+            </div>
+            <button onClick={reset}>Reset</button>
+            <button onClick={flip}>Flip</button>
+        </div>
+        );
+    }
+
+
+    const root = document.getElementById("root");
+    ReactDOM.render(<App />, root);
+
+</script>
+</html>
+
+<!--useState = array 형식 []-->
+
+<!--value 만 렌더링-->
+<!--Math.round() 반올림  -->
