@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!--StatePractice / 입력 그리고 상태-->
 
+<!DOCTYPE html>
+<html>
+<body>
+<div id="root"> </div>
 </body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"> </script>
+<!--react import-->
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"> </script>
+<!--react import-->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"> </script>
+<!--babel import-->
+<script type="text/babel">
+    function MinutesToHours() {}
+
+     function KmToMiles(){
+        reutrn <h3> Km 2 M </h3>
+    }
+
+    function App () {
+        return (
+            <div>
+                <h1> Super Converter </h1>
+                <MinutesToHours/>
+            </div>
+        );
+    }
+
+    const root = document.getElementById("root");
+    ReactDOM.render(<App />, root);
+
+</script>
 </html>
+
+<!--useState = array 형식 []-->
+
+<!--value 만 렌더링-->
+<!--Math.round() 반올림  -->
